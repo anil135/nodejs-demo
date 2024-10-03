@@ -30,7 +30,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Checkout the repository
-                git branch: 'main', 'https://github.com/anil135/nodejs-demo.git'
+                git 'https://github.com/anil135/nodejs-demo.git'
             }
         }
 
