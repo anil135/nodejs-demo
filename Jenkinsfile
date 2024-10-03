@@ -30,7 +30,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Checkout the repository
-                git 'https://github.com/anil135/nodejs-demo.git'
+                git branch: 'main', 'https://github.com/anil135/nodejs-demo.git'
             }
         }
 
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 // Build Docker image
                 sh """
-                docker build -t ${DOCKER_IMAGE}:${DOCKER_IMAGE_TAG} .
+                "docker build -t ${DOCKER_IMAGE}:${env.BUILD_NUMBER} ."
                 """
             }
         }
